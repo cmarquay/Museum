@@ -1,0 +1,25 @@
+<resources>
+    //credits
+    <string name="author">The resources belong to the Museum of La Rochelle.\nThis application was created as part of an internship at l3i of the University of La Rochelle by Christian Marquay.</string>
+    <string name="logo_museum">logo museum</string>
+    <string name="logo_l3i">logo l3i</string>
+    <string name="logo_university">university logo</string>
+
+    //home
+    <string name="app_name">Museum</string>
+    <string name="credits">Credits</string>
+    <string name="french_flag">French flag</string>
+    <string name="british_flag">British flag</string>
+    <string name="spanish_flag">Spanish flag</string>
+    <string name="german_flag">German flag</string>
+    <string name="number" translatable="false">N°</string>
+    <string name="sign">Sign</string>
+    <string name="ok">Done</string>
+    <string name="error">Choose a number between 1 and 26</string>
+
+    //signs
+    <string name="left_arrow">left arrow</string>
+    <string name="right_arrow">right arrow</string>
+    <string name="first_sign">This is the first sign</string>
+    <string name="last_sign">This is the last sign</string>
+</resources>

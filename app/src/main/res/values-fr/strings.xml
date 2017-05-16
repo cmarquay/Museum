@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //credits
+    <string name="author">Les ressources appartiennent au Museum de La Rochelle.\nCette application a été créée dans le cadre d\'un stage au l3i de l\'université de La Rochelle par Christian Marquay.</string>
+    <string name="logo_museum">logo museum</string>
+    <string name="logo_l3i">logo l3i</string>
+    <string name="logo_university">logo université</string>
+
+    //home
+    <string name="app_name">Museum</string>
+    <string name="credits">Crédits</string>
+    <string name="french_flag">Drapeau français</string>
+    <string name="british_flag">Drapeau britannique</string>
+    <string name="spanish_flag">Drapeau espagnol</string>
+    <string name="german_flag">Drapeau allemand</string>
+    <string name="sign">Panneau</string>
+    <string name="ok">OK</string>
+    <string name="error">Choisissez un nombre entre 1 et 26</string>
+
+    //signs
+    <string name="left_arrow">flèche gauche</string>
+    <string name="right_arrow">flèche droite</string>
+    <string name="first_sign">C\'est le premier panneau</string>
+    <string name="last_sign">C\'est le dernier panneau</string>
+</resources>
