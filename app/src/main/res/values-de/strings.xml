@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //credits
+    <string name="author">Die Ressourcen gehören das Museum von La Rochelle.\nDiese Anwendung wurde im Rahmen eines Praktikums L3i Universität La Rochelle von Christian Marquay erstellt.</string>
+    <string name="logo_museum">Museum logo</string>
+    <string name="logo_l3i">L3i logo</string>
+    <string name="logo_university">Universität logo</string>
+
+    //home
+    <string name="app_name">Museum</string>
+    <string name="credits">Quellenangabe</string>
+    <string name="french_flag">Französische Flagge</string>
+    <string name="british_flag">Britische Flagge</string>
+    <string name="spanish_flag">Spanische flagge</string>
+    <string name="german_flag">Deutsche Flagge</string>
+    <string name="sign">Platte</string>
+    <string name="ok">Fertig</string>
+    <string name="error">Wählen Sie eine Zahl zwischen 1 und 26</string>
+
+    //signs
+    <string name="left_arrow">linker Pfeil</string>
+    <string name="right_arrow">rechter Pfeil</string>
+    <string name="first_sign">Dies ist die erste Platte</string>
+    <string name="last_sign">Dies ist die letzte Platte</string>
+</resources>
