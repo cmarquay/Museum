@@ -51,13 +51,13 @@ public class SignsActivity extends AppCompatActivity {
             previousSignView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (signNumber > 1) {
+                    if (signNumber == 0 || signNumber > 1) {
                         switch (signNumber) {
-                            case 25:
-                                signNumber = 42;
-                                break;
-                            case 42:
+                            case 0:
                                 signNumber = 24;
+                                break;
+                            case 25:
+                                signNumber = 0;
                                 break;
                             default:
                                 signNumber--;
@@ -77,11 +77,11 @@ public class SignsActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if (signNumber < 26) {
                         switch (signNumber) {
-                            case 24:
-                                signNumber = 42;
-                                break;
-                            case 42:
+                            case 0:
                                 signNumber = 25;
+                                break;
+                            case 24:
+                                signNumber = 0;
                                 break;
                             default:
                                 signNumber++;
