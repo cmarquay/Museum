@@ -55,7 +55,7 @@ public class SignsActivity extends AppCompatActivity {
                         signNumber--;
                         displayPanel();
                     } else {
-                        Toast.makeText(SignsActivity.this, R.string.first_sign, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignsActivity.this, getString(R.string.first_sign), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -70,7 +70,7 @@ public class SignsActivity extends AppCompatActivity {
                         signNumber++;
                         displayPanel();
                     } else {
-                        Toast.makeText(SignsActivity.this, R.string.last_sign, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignsActivity.this, getString(R.string.last_sign), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!signNumber.equals("")) {
                         int number = Integer.parseInt(signNumber);
                         if (number < 1 || number > 26) {
-                            Toast.makeText(MainActivity.this, R.string.error, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
                         } else {
                             Intent intent = new Intent(MainActivity.this, SignsActivity.class);
                             intent.putExtra("language", language);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     } else {
-                        Toast.makeText(MainActivity.this, R.string.error, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
