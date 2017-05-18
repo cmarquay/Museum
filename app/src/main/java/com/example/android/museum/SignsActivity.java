@@ -52,7 +52,16 @@ public class SignsActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (signNumber > 1) {
-                        signNumber--;
+                        switch (signNumber) {
+                            case 25:
+                                signNumber = 42;
+                                break;
+                            case 42:
+                                signNumber = 24;
+                                break;
+                            default:
+                                signNumber--;
+                        }
                         displayPanel();
                     } else {
                         Toast.makeText(SignsActivity.this, getString(R.string.first_sign), Toast.LENGTH_SHORT).show();
@@ -67,7 +76,16 @@ public class SignsActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (signNumber < 26) {
-                        signNumber++;
+                        switch (signNumber) {
+                            case 24:
+                                signNumber = 42;
+                                break;
+                            case 42:
+                                signNumber = 25;
+                                break;
+                            default:
+                                signNumber++;
+                        }
                         displayPanel();
                     } else {
                         Toast.makeText(SignsActivity.this, getString(R.string.last_sign), Toast.LENGTH_SHORT).show();
@@ -80,9 +98,17 @@ public class SignsActivity extends AppCompatActivity {
     }
 
     private void displayPanel() {
+        ImageView signLogoView = (ImageView) findViewById(R.id.sign_logo);
+        if (signLogoView != null) {
+            signLogoView.setImageResource(R.drawable.sign_1);
+        }
+        TextView signTitleView = (TextView) findViewById(R.id.sign_title);
+        if (signTitleView != null) {
+            signTitleView.setText("Title for\nthe sign n°" + signNumber + " in " + language);
+        }
         TextView signDescriptionView = (TextView) findViewById(R.id.sign_description);
         if (signDescriptionView != null) {
-            signDescriptionView.setText("You are looking for\nthe sign n°" + signNumber + " in " + language);
+            signDescriptionView.setText("Description for\nthe sign n°" + signNumber + " in " + language);
         }
     }
 

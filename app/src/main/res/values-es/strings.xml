@@ -18,6 +18,7 @@
     <string name="error">Elija un número entre 1 y 26</string>
 
     //signs
+    <string name="logo_sign">logo placa</string>
     <string name="left_arrow">flecha hacia la izquierda</string>
     <string name="right_arrow">flecha hacia la derecha</string>
     <string name="first_sign">Esta es la primera placa</string>
