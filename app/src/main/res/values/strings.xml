@@ -18,6 +18,7 @@
     <string name="error">Choose a number between 1 and 26</string>
 
     //signs
+    <string name="logo_sign">logo sign</string>
     <string name="left_arrow">left arrow</string>
     <string name="right_arrow">right arrow</string>
     <string name="first_sign">This is the first sign</string>
