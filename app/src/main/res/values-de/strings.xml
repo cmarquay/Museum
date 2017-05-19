@@ -18,6 +18,7 @@
     <string name="error">Wählen Sie eine Zahl zwischen 1 und 26</string>
 
     //signs
+    <string name="logo_sign">Platte logo</string>
     <string name="left_arrow">linker Pfeil</string>
     <string name="right_arrow">rechter Pfeil</string>
     <string name="first_sign">Dies ist die erste Platte</string>
