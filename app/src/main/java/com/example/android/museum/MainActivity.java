@@ -1,3 +1,7 @@
+/* Activity class displaying the homepage of the Museum app.
+ * @author Christian Marquay
+ */
+
 package com.example.android.museum;
 
 import android.content.Intent;
@@ -13,7 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    String language;
+    int language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +28,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        language = "french";
+        language = 0;
 
         ImageView frenchLanguageView = (ImageView) findViewById(R.id.frenchLanguage);
         if (frenchLanguageView != null) {
             frenchLanguageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    language = "french";
+                    language = 0;
                 }
             });
         }
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             englishLanguageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    language = "english";
+                    language = 1;
                 }
             });
         }
@@ -51,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             spanishLanguageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    language = "spanish";
+                    language = 2;
                 }
             });
         }
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             germanLanguageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    language = "spanish";
+                    language = 3;
                 }
             });
         }*/
