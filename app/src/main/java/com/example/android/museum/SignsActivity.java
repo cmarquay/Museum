@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -476,7 +475,7 @@ public class SignsActivity extends AppCompatActivity {
                         "They also made drawings to provide as much information as possible regarding certain animals with ephemeral characteristics, such as fish which loses its colors once going out from water. \n" +
                         "Each species found was described scientifically, and those that were observed for the very times were given names.  Another specimen collected is differentiated by their new anatomic details enabling the definition of new genre or new species. \n" +
                         "All of these descriptions contain references for scientific community, and for this reason, the name(s) of the describers are followed by the year of observation and then the name of the species."));
-        englishSigns.add( new Sign(R.drawable.sign_16,
+        englishSigns.add(new Sign(R.drawable.sign_16,
                 "The last grand scientific expedition \n" +
                         "\n" +
                         "The discovery of Southern Continent",
@@ -627,24 +626,20 @@ public class SignsActivity extends AppCompatActivity {
             previousSignView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (signNumber == 0 || signNumber > 1) {
-                        switch (signNumber) {
-                            case 0:
-                                signNumber = 24;
-                                break;
-                            case 9:
-                                signNumber = 7;
-                                break;
-                            case 25:
-                                signNumber = 0;
-                                break;
-                            default:
-                                signNumber--;
-                        }
-                        refresh();
-                    } else {
-                        Toast.makeText(SignsActivity.this, getString(R.string.first_sign), Toast.LENGTH_SHORT).show();
+                    switch (signNumber) {
+                        case 0:
+                            signNumber = 24;
+                            break;
+                        case 9:
+                            signNumber = 7;
+                            break;
+                        case 25:
+                            signNumber = 0;
+                            break;
+                        default:
+                            signNumber--;
                     }
+                    refresh();
                 }
             });
         }
@@ -654,29 +649,25 @@ public class SignsActivity extends AppCompatActivity {
             nextSignView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (signNumber < 26) {
-                        switch (signNumber) {
-                            case 0:
-                                signNumber = 25;
-                                break;
-                            case 7:
-                                signNumber = 9;
-                                break;
-                            case 24:
-                                signNumber = 0;
-                                break;
-                            default:
-                                signNumber++;
-                        }
-                        refresh();
-                    } else {
-                        Toast.makeText(SignsActivity.this, getString(R.string.last_sign), Toast.LENGTH_SHORT).show();
+                    switch (signNumber) {
+                        case 0:
+                            signNumber = 25;
+                            break;
+                        case 7:
+                            signNumber = 9;
+                            break;
+                        case 24:
+                            signNumber = 0;
+                            break;
+                        default:
+                            signNumber++;
                     }
+                    refresh();
                 }
             });
         }
 
-                displaySign();
+        displaySign();
     }
 
     /* Method for refreshing the page with new data.
@@ -722,6 +713,22 @@ public class SignsActivity extends AppCompatActivity {
                 number = "" + signNumber;
             }
             signNumberView.setText(number);
+        }
+        ImageView previousSignView = (ImageView) findViewById(R.id.previousSign);
+        if (previousSignView != null) {
+            if (signNumber == 1) {
+                previousSignView.setVisibility(View.GONE);
+            } else {
+                previousSignView.setVisibility(View.VISIBLE);
+            }
+        }
+        ImageView nextSignView = (ImageView) findViewById(R.id.nextSign);
+        if (nextSignView != null) {
+            if (signNumber == 26) {
+                nextSignView.setVisibility(View.GONE);
+            } else {
+                nextSignView.setVisibility(View.VISIBLE);
+            }
         }
     }
 
