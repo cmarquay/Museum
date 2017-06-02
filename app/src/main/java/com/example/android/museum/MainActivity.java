@@ -1,3 +1,7 @@
+/* Activity class displaying the homepage of the Museum app.
+ * @author Christian Marquay
+ */
+
 package com.example.android.museum;
 
 import android.content.Intent;
@@ -24,17 +28,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        language = "french";
-
-        ImageView frenchLanguageView = (ImageView) findViewById(R.id.frenchLanguage);
-        if (frenchLanguageView != null) {
-            frenchLanguageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    language = "french";
-                }
-            });
-        }
+        language = "english";
 
         ImageView englishLanguageView = (ImageView) findViewById(R.id.englishLanguage);
         if (englishLanguageView != null) {
@@ -42,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     language = "english";
+                }
+            });
+        }
+
+        ImageView frenchLanguageView = (ImageView) findViewById(R.id.frenchLanguage);
+        if (frenchLanguageView != null) {
+            frenchLanguageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    language = "french";
                 }
             });
         }
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             germanLanguageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    language = "spanish";
+                    language = "german";
                 }
             });
         }*/

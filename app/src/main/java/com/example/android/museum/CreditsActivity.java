@@ -1,3 +1,7 @@
+/* Activity class displaying the credits of the Museum app.
+ * @author Christian Marquay
+ */
+
 package com.example.android.museum;
 
 import android.os.Bundle;
