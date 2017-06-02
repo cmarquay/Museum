@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int language;
+    String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,24 +28,24 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        language = 0;
-
-        ImageView frenchLanguageView = (ImageView) findViewById(R.id.frenchLanguage);
-        if (frenchLanguageView != null) {
-            frenchLanguageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    language = 0;
-                }
-            });
-        }
+        language = "english";
 
         ImageView englishLanguageView = (ImageView) findViewById(R.id.englishLanguage);
         if (englishLanguageView != null) {
             englishLanguageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    language = 1;
+                    language = "english";
+                }
+            });
+        }
+
+        ImageView frenchLanguageView = (ImageView) findViewById(R.id.frenchLanguage);
+        if (frenchLanguageView != null) {
+            frenchLanguageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    language = "french";
                 }
             });
         }
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             spanishLanguageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    language = 2;
+                    language = "spanish";
                 }
             });
         }
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             germanLanguageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    language = 3;
+                    language = "german";
                 }
             });
         }*/
