@@ -15,25 +15,75 @@
         signNumber = parseInt(signNumber);
     }
 
-    var credits = document.getElementById('credits');
+    var menu1 = document.getElementsByClassName("credits_menu")[0];
 
-    var index = document.getElementById('index');
+    var menu2 = document.getElementsByClassName("index_menu")[0];
 
-    var britishFlag = document.getElementById('britishFlag');
+    var menu3 = document.getElementsByClassName("signs_menu")[0];
 
-    var frenchFlag = document.getElementById('frenchFlag');
+    var credits = document.getElementById("credits");
 
-    var number = document.getElementsByName('signNumber')[0];
+    var index = document.getElementById("index");
 
-    var send = document.getElementById('send');
+    var britishFlag = document.getElementById("britishFlag");
 
-    var message = document.getElementById('error');
+    var frenchFlag = document.getElementById("frenchFlag");
 
-    var sign = document.getElementById('signs');
+    var number = document.getElementsByName("signNumber")[0];
 
-    var previous = document.getElementById('previousSign');
+    var send = document.getElementById("send");
 
-    var next = document.getElementById('nextSign');
+    var message = document.getElementById("error");
+
+    var sign = document.getElementById("signs");
+
+    var previous = document.getElementById("previousSign");
+
+    var next = document.getElementById("nextSign");
+
+
+
+    function menu() {
+            switch (language) {
+                case "french":
+                    menu1.innerHTML = "Crédits";
+                    menu2.innerHTML = "Accueil";
+                    menu3.innerHTML = "Panneaux";
+                    break;
+                case "spanish":
+                    menu1.innerHTML = "Créditos";
+                    menu2.innerHTML = "Home";
+                    menu3.innerHTML = "Placas";
+                    break;
+                case "german":
+                    menu1.innerHTML = "Quellenangaben";
+                    menu2.innerHTML = "Home";
+                    menu3.innerHTML = "Platten";
+                    break;
+                default:
+                    menu1.innerHTML = "Credits";
+                    menu2.innerHTML = "Home";
+                    menu3.innerHTML = "Signs";
+            }
+    }
+
+    function menu_credits() {
+        menu1.addEventListener("click", function () {
+            document.location = "credits.html";
+        });
+    }
+
+    function menu_index() {
+        menu2.addEventListener("click", function () {
+            document.location = "index.html";
+        });
+    }
+
+    function menu_signs() {
+        menu3.addEventListener("click", function () {
+            document.location = "signs.html";
+        });
+    }
 
 
 
@@ -45,19 +95,26 @@
 
     if (credits !== null) {
         credits.onload = function() {
-            var first = document.getElementById('par1');
-            var second = document.getElementById('par2');
+            menu();
+            menu_index();
+            menu_signs();
+            var first = document.getElementById("par1");
+            var second = document.getElementById("par2");
             switch (language) {
-                case "french": first.innerHTML = "Les ressources appartiennent au Museum de La Rochelle.";
+                case "french":
+                    first.innerHTML = "Les ressources appartiennent au Museum de La Rochelle.";
                     second.innerHTML = "Cette application a été créée dans le cadre d'un stage au l3i de l'université de La Rochelle par Christian Marquay.";
                     break;
-                case "spanish": first.innerHTML = "Los recursos pertenecen al Museum de La Rochelle.";
+                case "spanish":
+                    first.innerHTML = "Los recursos pertenecen al Museum de La Rochelle.";
                     second.innerHTML = "Esta aplicación fue creada como parte de una pasantía en el L3I de la Universidad de La Rochelle por Christian Marquay.";
                     break;
-                case "german": first.innerHTML = "Die Ressourcen gehören das Museum von La Rochelle.";
+                case "german":
+                    first.innerHTML = "Die Ressourcen gehören das Museum von La Rochelle.";
                     second.innerHTML = "Diese Anwendung wurde im Rahmen eines Praktikums L3i Universität La Rochelle von Christian Marquay erstellt.";
                     break;
-                default: first.innerHTML = "The resources belong to the Museum of La Rochelle.";
+                default:
+                    first.innerHTML = "The resources belong to the Museum of La Rochelle.";
                     second.innerHTML = "This application was created as part of an internship at l3i of the University of La Rochelle by Christian Marquay.";
             }
         };
@@ -73,6 +130,9 @@
 
     if (index !== null) {
         index.onload = function() {
+            menu();
+            menu_credits();
+            menu_signs();
             switch (language) {
                 case "french":
                     number.placeholder = "Panneau";
@@ -98,6 +158,9 @@
         britishFlag.addEventListener('click', function () {
             language = "english";
             sessionStorage.setItem("language", language);
+            menu1.innerHTML = "Credits";
+            menu2.innerHTML = "Home";
+            menu3.innerHTML = "Signs";
             number.placeholder = "Sign";
             send.value = "Done";
             message.innerHTML = "";
@@ -105,9 +168,12 @@
     }
 
     if (frenchFlag !== null) {
-        frenchFlag.addEventListener('click', function () {
+        frenchFlag.addEventListener("click", function () {
             language = "french";
             sessionStorage.setItem("language", language);
+            menu1.innerHTML = "Crédits";
+            menu2.innerHTML = "Accueil";
+            menu3.innerHTML = "Panneaux";
             number.placeholder = "Panneau";
             send.value = "OK";
             message.innerHTML = "";
@@ -115,7 +181,7 @@
     }
 
     if (send !== null) {
-        send.addEventListener('click', function () {
+        send.addEventListener("click", function () {
             var signInput = document.getElementById("signNumber");
             if (is_int(signInput.value)) {
                 if (signInput.value < 1 || signInput.value > 26) {
@@ -159,7 +225,10 @@
 
     if (sign !== null) {
         sign.onload = function () {
-            var signContent = document.getElementById('signContent');
+            menu();
+            menu_credits();
+            menu_index();
+            var signContent = document.getElementById("signContent");
             switch (language) {
                 case "french": signContent.innerHTML = "Panneau n°" + signNumber;
                     break;
@@ -170,7 +239,7 @@
                 default: signContent.innerHTML = "Sign n°" + signNumber;
             }
             var p = document.getElementById('number');
-            if (signNumber == 0) {
+            if (signNumber === 0) {
                 p.innerHTML = "24bis";
             } else {
                 p.innerHTML = signNumber;
@@ -213,7 +282,7 @@
     }
 
     if (next !== null) {
-        next.addEventListener('click', function () {
+        next.addEventListener("click", function () {
             switch (signNumber) {
                 case 0:
                     signNumber = 25;

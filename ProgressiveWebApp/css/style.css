@@ -3,6 +3,48 @@
     padding: 0;
 }
 
+header img, header h1 {
+    display: inline-block;
+    height: auto;
+}
+
+header {
+    margin-bottom: 5vh;
+}
+
+header img {
+    width: 20vw;
+    margin-left: 10vw;
+    margin-top: 5vh;
+}
+
+header h1 {
+    font-family: "Lucida Sans", "Comic Sans MS", monospace;
+    font-size: 12vw;
+    color: #6A6A6A;
+}
+
+nav {
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+
+nav ul li {
+    display: inline-block;
+    height: 6vh;
+    width: 23%;
+    padding: 2vh 2vh 1vh 2vh;
+    background-color: #C30069;
+    font-size: 5.5vw;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
 .main {
     margin-right: 10vw;
     margin-left: 10vw;
@@ -18,13 +60,13 @@
 
 #credits_text, #signContent {
     margin-bottom: 10vh;
-    margin-top: 10vh;
+    margin-top: 5vh;
     font-size: 6vw;
     text-align: justify;
 }
 
 #credits_img section {
-    display: inline-block;
+    float: left;
     width: 24.5%;
 }
 
@@ -56,8 +98,8 @@
     display: inline-block;
     height: 10vh;
     width: 20vw;
-    margin-bottom: 20vh;
-    margin-top: 10vh;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
 }
 
 #language img:active {
@@ -87,7 +129,7 @@ label, input {
 
 #error {
     width: 100%;
-    margin-top: 10vh;
+    margin-top: 5vh;
     color: red;
     font-size: 6vw;
     text-align: center;
@@ -119,12 +161,26 @@ label, input {
 
 
 /***************/
+/***   IPAD  ***/
+/***************/
+
+
+
+@media screen and (min-width: 750px) {
+    nav ul li {
+        width: 26%;
+    }
+}
+
+
+
+/***************/
 /*** DESKTOP ***/
 /***************/
 
 
 
-@media screen and (min-width: 500vw) {
+@media screen and (min-width: 1500px) {
     #language img {
         height: 10vh;
         width: 10vw;
