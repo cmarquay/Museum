@@ -52,29 +52,28 @@
     var next = document.getElementById("nextSign");
 
 
-
     function menu() {
-            switch (language) {
-                case "french":
-                    menu1.innerHTML = "Crédits";
-                    menu2.innerHTML = "Accueil";
-                    menu3.innerHTML = "Panneaux";
-                    break;
-                case "spanish":
-                    menu1.innerHTML = "Créditos";
-                    menu2.innerHTML = "Home";
-                    menu3.innerHTML = "Placas";
-                    break;
-                case "german":
-                    menu1.innerHTML = "Quellenangaben";
-                    menu2.innerHTML = "Home";
-                    menu3.innerHTML = "Platten";
-                    break;
-                default:
-                    menu1.innerHTML = "Credits";
-                    menu2.innerHTML = "Home";
-                    menu3.innerHTML = "Signs";
-            }
+        switch (language) {
+            case "french":
+                menu1.innerHTML = "Crédits";
+                menu2.innerHTML = "Accueil";
+                menu3.innerHTML = "Panneaux";
+                break;
+            case "spanish":
+                menu1.innerHTML = "Créditos";
+                menu2.innerHTML = "Home";
+                menu3.innerHTML = "Placas";
+                break;
+            case "german":
+                menu1.innerHTML = "Quellenangaben";
+                menu2.innerHTML = "Home";
+                menu3.innerHTML = "Platten";
+                break;
+            default:
+                menu1.innerHTML = "Credits";
+                menu2.innerHTML = "Home";
+                menu3.innerHTML = "Signs";
+        }
     }
 
     function menu_credits() {
@@ -96,15 +95,13 @@
     }
 
 
-
     /***************/
     /*** CREDITS ***/
     /***************/
 
 
-
     if (credits !== null) {
-        credits.onload = function() {
+        credits.onload = function () {
             menu();
             menu_index();
             menu_signs();
@@ -131,15 +128,13 @@
     }
 
 
-
     /***************/
     /***   HOME  ***/
     /***************/
 
 
-
     if (index !== null) {
-        index.onload = function() {
+        index.onload = function () {
             menu();
             menu_credits();
             menu_signs();
@@ -211,13 +206,17 @@
 
     function notExpected() {
         switch (language) {
-            case "french": message.innerHTML = "Merci de choisir un numéro de panneau entre 1 et 26.";
+            case "french":
+                message.innerHTML = "Merci de choisir un numéro de panneau entre 1 et 26.";
                 break;
-            case "spanish": message.innerHTML = "Gracias a elegir un número de placa entre 1 y 26.";
+            case "spanish":
+                message.innerHTML = "Gracias a elegir un número de placa entre 1 y 26.";
                 break;
-            case "german": message.innerHTML = "Wir danken Ihnen, ein Platte Zahl zwischen 1 und 26 zu wählen.";
+            case "german":
+                message.innerHTML = "Wir danken Ihnen, ein Platte Zahl zwischen 1 und 26 zu wählen.";
                 break;
-            default: message.innerHTML = "Please choose a sign number between 1 and 26.";
+            default:
+                message.innerHTML = "Please choose a sign number between 1 and 26.";
         }
     }
 
@@ -226,11 +225,9 @@
     }
 
 
-
     /***************/
     /***  SIGNS  ***/
     /***************/
-
 
 
     if (sign !== null) {
@@ -838,13 +835,13 @@
                     signContent.innerHTML = signs[signNumber].mFrenchContent;
                     break;
                 /*case "spanish":
-                    signTitle.innerHTML = signs[signNumber].mSpanishTitle;
+                 signTitle.innerHTML = signs[signNumber].mSpanishTitle;
                  signContent.innerHTML = signs[signNumber].mSpanishContent;
-                    break;
-                case "german":
-                    signTitle.innerHTML = signs[signNumber].mGermanTitle;
+                 break;
+                 case "german":
+                 signTitle.innerHTML = signs[signNumber].mGermanTitle;
                  signContent.innerHTML = signs[signNumber].mGermanContent;
-                    break;*/
+                 break;*/
                 default:
                     signTitle.innerHTML = signs[signNumber].mEnglishTitle;
                     signContent.innerHTML = signs[signNumber].mEnglishContent;

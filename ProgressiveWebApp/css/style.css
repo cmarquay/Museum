@@ -41,7 +41,7 @@ nav ul li {
     text-decoration: none;
 }
 
-nav ul li:active, #language img:active {
+nav ul li:not(.selected):active, #language img:active, #previousSign:active, #nextSign:active {
     opacity: 0.5;
 }
 
@@ -54,13 +54,9 @@ nav ul li:active, #language img:active {
     margin-left: 10vw;
 }
 
-
-
 /***************/
 /*** CREDITS ***/
 /***************/
-
-
 
 #credits_text {
     margin-bottom: 10vh;
@@ -86,13 +82,9 @@ nav ul li:active, #language img:active {
     width: 20vw;
 }
 
-
-
 /***************/
 /***   HOME  ***/
 /***************/
-
-
 
 #language, form, #footer {
     width: 100%;
@@ -135,13 +127,9 @@ label, input {
     text-align: center;
 }
 
-
-
 /***************/
 /***  SIGNS  ***/
 /***************/
-
-
 
 #sign {
     margin-top: 5vh;
@@ -196,13 +184,9 @@ label, input {
     float: right;
 }
 
-
-
 /***************/
 /***   IPAD  ***/
 /***************/
-
-
 
 @media screen and (min-width: 750px) {
     nav ul li {
@@ -210,13 +194,9 @@ label, input {
     }
 }
 
-
-
 /***************/
 /*** DESKTOP ***/
 /***************/
-
-
 
 @media screen and (min-width: 1500px) {
     nav ul li {
