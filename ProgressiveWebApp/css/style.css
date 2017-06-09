@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+
+
+
+/***************/
+/*** CREDITS ***/
+/***************/
+
+
+
+#credits_text, #signContent {
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+    font-size: 6vw;
+    text-align: justify;
+}
+
+#credits_img section {
+    display: inline-block;
+    width: 24.5%;
+}
+
+#credits_img section img {
+    height: 10vh;
+}
+
+#city_logo {
+    width: 12vw;
+}
+
+#logo_l3i {
+    width: 20vw;
+}
+
+
+
+/***************/
+/***   HOME  ***/
+/***************/
+
+
+
+#language, form, #footer {
+    width: 100%;
+}
+
+#language img {
+    display: inline-block;
+    height: 10vh;
+    width: 20vw;
+    margin-bottom: 20vh;
+    margin-top: 10vh;
+}
+
+#language img:active {
+    opacity: 0.5;
+}
+
+#frenchFlag {
+    float: left;
+}
+
+#britishFlag {
+    float: right;
+}
+
+form {
+    clear: both;
+}
+
+label, input {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 8vh;
+    font-size: 6vw;
+    text-align: center;
+}
+
+#error {
+    width: 100%;
+    margin-top: 10vh;
+    color: red;
+    font-size: 6vw;
+    text-align: center;
+}
+
+
+
+/***************/
+/***  SIGNS  ***/
+/***************/
+
+
+
+#footer img {
+    height: 10vh;
+    width: 10vw;
+}
+
+#number {
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+    font-size: 6vw;
+}
+
+#nextSign {
+    float: right;
+}
+
+
+
+/***************/
+/*** DESKTOP ***/
+/***************/
+
+
+
+@media screen and (min-width: 500vw) {
+    #language img {
+        height: 10vh;
+        width: 10vw;
+    }
+}
+
