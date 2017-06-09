@@ -41,6 +41,10 @@ nav ul li {
     text-decoration: none;
 }
 
+nav ul li:active, #language img:active {
+    opacity: 0.5;
+}
+
 .selected {
     text-decoration: underline;
 }
@@ -58,7 +62,7 @@ nav ul li {
 
 
 
-#credits_text, #signContent {
+#credits_text {
     margin-bottom: 10vh;
     margin-top: 5vh;
     font-size: 6vw;
@@ -102,10 +106,6 @@ nav ul li {
     margin-top: 5vh;
 }
 
-#language img:active {
-    opacity: 0.5;
-}
-
 #frenchFlag {
     float: left;
 }
@@ -142,6 +142,44 @@ label, input {
 /***************/
 
 
+
+#sign {
+    margin-top: 5vh;
+}
+
+#logo_sign, #second_logo_sign, #signTitle, #signContent {
+    display: inline-block;
+}
+
+#logo_sign, #second_logo_sign {
+    width: 28%;
+}
+
+#signTitle, #signContent {
+    width: 70%;
+}
+
+#logo_sign {
+    vertical-align: bottom;
+}
+
+#signTitle {
+    font-size: 9vw;
+}
+
+#second_logo_sign {
+    margin-top: 5vh;
+    vertical-align: top;
+}
+
+#signContent {
+    margin-top: 5vh;
+    font-size: 6vw;
+}
+
+#footer {
+    clear: both;
+}
 
 #footer img {
     height: 10vh;
@@ -181,6 +219,10 @@ label, input {
 
 
 @media screen and (min-width: 1500px) {
+    nav ul li {
+        height: 16vh;
+    }
+
     #language img {
         height: 10vh;
         width: 10vw;
