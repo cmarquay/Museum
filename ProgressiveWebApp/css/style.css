@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header img, header h1 {
+    display: inline-block;
+    height: auto;
+}
+
+header {
+    margin-bottom: 5vh;
+}
+
+header img {
+    width: 20vw;
+    margin-left: 10vw;
+    margin-top: 5vh;
+}
+
+header h1 {
+    font-family: "Lucida Sans", "Comic Sans MS", monospace;
+    font-size: 12vw;
+    color: #6A6A6A;
+}
+
+nav {
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+
+nav ul li {
+    display: inline-block;
+    height: 6vh;
+    width: 23%;
+    padding: 2vh 2vh 1vh 2vh;
+    background-color: #C30069;
+    font-size: 5.5vw;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav ul li:not(.selected):active, #language img:active, #previousSign:active, #nextSign:active {
+    opacity: 0.5;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+.main {
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+
+/***************/
+/*** CREDITS ***/
+/***************/
+
+#credits_text {
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    font-size: 6vw;
+    text-align: justify;
+}
+
+#credits_img section {
+    float: left;
+    width: 24.5%;
+}
+
+#credits_img section img {
+    height: 10vh;
+}
+
+#city_logo {
+    width: 12vw;
+}
+
+#logo_l3i {
+    width: 20vw;
+}
+
+/***************/
+/***   HOME  ***/
+/***************/
+
+#language, form, #footer {
+    width: 100%;
+}
+
+#language img {
+    display: inline-block;
+    height: 10vh;
+    width: 20vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+}
+
+#frenchFlag {
+    float: left;
+}
+
+#britishFlag {
+    float: right;
+}
+
+form {
+    clear: both;
+}
+
+label, input {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 8vh;
+    font-size: 6vw;
+    text-align: center;
+}
+
+#error {
+    width: 100%;
+    margin-top: 5vh;
+    color: red;
+    font-size: 6vw;
+    text-align: center;
+}
+
+/***************/
+/***  SIGNS  ***/
+/***************/
+
+#sign {
+    margin-top: 5vh;
+}
+
+#logo_sign, #second_logo_sign, #signTitle, #signContent {
+    display: inline-block;
+}
+
+#logo_sign, #second_logo_sign {
+    width: 28%;
+}
+
+#signTitle, #signContent {
+    width: 70%;
+}
+
+#logo_sign {
+    vertical-align: bottom;
+}
+
+#signTitle {
+    font-size: 9vw;
+}
+
+#second_logo_sign {
+    margin-top: 5vh;
+    vertical-align: top;
+}
+
+#signContent {
+    margin-top: 5vh;
+    font-size: 6vw;
+}
+
+#footer {
+    clear: both;
+}
+
+#footer img {
+    height: 10vh;
+    width: 10vw;
+}
+
+#number {
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+    font-size: 6vw;
+}
+
+#nextSign {
+    float: right;
+}
+
+/***************/
+/***   IPAD  ***/
+/***************/
+
+@media screen and (min-width: 750px) {
+    nav ul li {
+        width: 26%;
+    }
+}
+
+/***************/
+/*** DESKTOP ***/
+/***************/
+
+@media screen and (min-width: 1500px) {
+    nav ul li {
+        height: 16vh;
+    }
+
+    #language img {
+        height: 10vh;
+        width: 10vw;
+    }
+}
+

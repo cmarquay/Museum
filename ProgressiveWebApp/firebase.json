@@ -1,0 +1,9 @@
+{
+  "firebase": "museum-26191",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

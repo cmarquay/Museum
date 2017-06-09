@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="The natural history museum of La Rochelle is a French museum of natural history located in the city of La Rochelle, in Charente-Maritime.">
+    <title>Credits</title>
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+</head>
+<body id="credits">
+
+<header>
+    <img class="logo_title" src="images/museum.png" alt="logo musum" />
+    <h1 class="title">Museum</h1>
+</header>
+
+<nav>
+    <ul>
+        <li class="credits_menu selected">Credits</li>
+        <li class="index_menu">Home</li>
+        <li class="signs_menu">Signs</li>
+    </ul>
+</nav>
+
+<main class="main">
+
+    <article id="credits_text">
+        <p id="par1"></p>
+        <p id="par2"></p>
+    </article>
+
+    <section id="credits_img">
+        <section>
+            <img id="logo_museum" src="images/museum.png" alt="logo museum" />
+        </section>
+        <section>
+            <img id="city_logo" src="images/city.png" alt="city logo" />
+        </section>
+        <section>
+            <img id="logo_university" src="images/university.png" alt="university logo" />
+        </section>
+        <section>
+            <img id="logo_l3i" src="images/l3i.png" alt="logo l3i" />
+        </section>
+    </section>
+
+</main>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyC3UWEG65FQCCV7J37dBw1XHwL44IMCI40",
+        authDomain: "museum-26191.firebaseapp.com",
+        databaseURL: "https://museum-26191.firebaseio.com",
+        projectId: "museum-26191",
+        storageBucket: "",
+        messagingSenderId: "816089144791"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="js/behavior.min.js"></script>
+
+</body>
+</html>
