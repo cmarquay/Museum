@@ -668,9 +668,14 @@ public class SignsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
         switch (item.getItemId()) {
+            case R.id.action_help:
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                return true;
             case R.id.action_credits:
-                Intent intent = new Intent(this, CreditsActivity.class);
+                intent = new Intent(this, CreditsActivity.class);
                 startActivity(intent);
                 return true;
         }

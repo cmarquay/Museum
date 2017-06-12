@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -37,6 +37,9 @@
         <item name="android:layout_width">78dp</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:scaleType">centerCrop</item>
+        <item name="android:background" tools:targetApi="21">
+            ?android:attr/selectableItemBackgroundBorderless
+        </item>
     </style>
 
     <!-- Arrows appearance style for signs -->
@@ -44,5 +47,8 @@
         <item name="android:layout_width">48dp</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:scaleType">centerCrop</item>
+        <item name="android:background" tools:targetApi="21">
+            ?android:attr/selectableItemBackgroundBorderless
+        </item>
     </style>
 </resources>
