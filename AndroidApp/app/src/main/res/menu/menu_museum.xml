@@ -5,6 +5,16 @@
     tools:context=".MainActivity">
 
     <item
+        android:id="@+id/action_help"
+        android:title="@string/help"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_map"
+        android:title="@string/map"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_credits"
         android:title="@string/credits"
         app:showAsAction="never" />
