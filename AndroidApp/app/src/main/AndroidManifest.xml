@@ -17,21 +17,27 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreditsActivity">
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MenuActivity" >
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity android:name=".SignsActivity">
-            android:parentActivityName=".MainActivity" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MenuActivity" />
         </activity>
         <activity android:name=".MenuActivity" />
-        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".SignsActivity">
+            android:parentActivityName=".MenuActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuActivity" />
+        </activity>
+        <activity android:name=".MapActivity">
+            android:parentActivityName=".MenuActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuActivity" />
+        </activity>
     </application>
 
 </manifest>
