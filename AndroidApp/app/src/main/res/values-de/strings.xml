@@ -37,4 +37,9 @@
 
     //map
     <string name="map">Plan</string>
+    <string name="third_floor">dritter Stock</string>
+    <string name="second_floor">zweite Stock</string>
+    <string name="first_floor">zuerst Stock</string>
+    <string name="ground_floor">Erdgeschoss</string>
+    <string name="basement">Kellergeschoss</string>
 </resources>

@@ -37,4 +37,9 @@
 
     //map
     <string name="map">Mapa</string>
+    <string name="third_floor">Tercer piso</string>
+    <string name="second_floor">Segundo piso</string>
+    <string name="first_floor">Primer piso</string>
+    <string name="ground_floor">Planta baja</string>
+    <string name="basement">Sótano</string>
 </resources>

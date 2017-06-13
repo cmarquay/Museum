@@ -37,4 +37,9 @@
 
     //map
     <string name="map">Map</string>
+    <string name="third_floor">Third floor</string>
+    <string name="second_floor">Second floor</string>
+    <string name="first_floor">First floor</string>
+    <string name="ground_floor">Ground floor</string>
+    <string name="basement">Basement</string>
 </resources>
