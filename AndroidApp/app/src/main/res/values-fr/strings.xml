@@ -37,4 +37,9 @@
 
     //map
     <string name="map">Plan</string>
+    <string name="third_floor">Troisième étage</string>
+    <string name="second_floor">Deuxième étage</string>
+    <string name="first_floor">Premier étage</string>
+    <string name="ground_floor">Rez-de-chaussée</string>
+    <string name="basement">Sous-sol</string>
 </resources>

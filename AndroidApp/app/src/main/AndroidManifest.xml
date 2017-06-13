@@ -31,6 +31,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MenuActivity" />
         </activity>
+        <activity android:name=".FlayedActivity">
+            android:parentActivityName=".MenuActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuActivity" />
+        </activity>
         <activity android:name=".MapActivity">
             android:parentActivityName=".MenuActivity" >
             <!-- Parent activity meta-data to support 4.0 and lower -->
