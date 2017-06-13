@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 public class FlayedActivity extends AppCompatActivity {
 
@@ -16,6 +18,62 @@ public class FlayedActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        ImageView thirdFloorView = (ImageView) findViewById(R.id.third_floor);
+        if (thirdFloorView != null) {
+            thirdFloorView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    displayFloor(3);
+                }
+            });
+        }
+
+        ImageView secondFloorView = (ImageView) findViewById(R.id.second_floor);
+        if (secondFloorView != null) {
+            secondFloorView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    displayFloor(2);
+                }
+            });
+        }
+
+        ImageView firstFloorView = (ImageView) findViewById(R.id.first_floor);
+        if (firstFloorView != null) {
+            firstFloorView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    displayFloor(1);
+                }
+            });
+        }
+
+        ImageView groundFloorView = (ImageView) findViewById(R.id.ground_floor);
+        if (groundFloorView != null) {
+            groundFloorView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    displayFloor(0);
+                }
+            });
+        }
+
+        ImageView basementView = (ImageView) findViewById(R.id.basement);
+        if (basementView != null) {
+            basementView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    displayFloor(-1);
+                }
+            });
+        }
+    }
+
+    public void displayFloor(int floor) {
+        Intent intent = new Intent(FlayedActivity.this, MapActivity.class);
+        intent.putExtra("floor", floor);
+        startActivity(intent);
     }
 
     @Override
