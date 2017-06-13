@@ -109,6 +109,10 @@ public class MenuActivity extends AppCompatActivity {
                 intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.action_map:
+                intent = new Intent(this, FlayedActivity.class);
+                startActivity(intent);
+                return true;
             case R.id.action_credits:
                 intent = new Intent(this, CreditsActivity.class);
                 startActivity(intent);
