@@ -81,7 +81,7 @@
 
             <ImageView
                 android:id="@+id/previousSign"
-                style="@style/ArrowsStyle"
+                style="@style/LogoStyle"
                 android:layout_alignParentBottom="true"
                 android:layout_below="@+id/sign_number"
                 android:contentDescription="@string/left_arrow"
@@ -89,7 +89,7 @@
 
             <ImageView
                 android:id="@+id/nextSign"
-                style="@style/ArrowsStyle"
+                style="@style/LogoStyle"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"

@@ -19,13 +19,15 @@
 
             <ImageView
                 android:id="@+id/frenchLanguage"
-                style="@style/FlagsStyle"
+                style="@style/LogoStyle"
+                android:layout_width="78dp"
                 android:contentDescription="@string/french_flag"
                 android:src="@drawable/france" />
 
             <ImageView
                 android:id="@+id/englishLanguage"
-                style="@style/FlagsStyle"
+                style="@style/LogoStyle"
+                android:layout_width="78dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:contentDescription="@string/british_flag"

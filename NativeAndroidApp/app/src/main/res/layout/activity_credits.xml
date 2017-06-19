@@ -15,29 +15,35 @@
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content">
 
         <ImageView
-            style="@style/ArrowsStyle"
+            style="@style/LogoStyle"
+            android:layout_margin="16dp"
             android:contentDescription="@string/logo_museum"
             android:src="@drawable/museum" />
 
         <ImageView
-            style="@style/FlagsStyle"
-            android:layout_centerHorizontal="true"
+            style="@style/LogoStyle"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/city_logo"
+            android:src="@drawable/city" />
+
+        <ImageView
+            style="@style/LogoStyle"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/university_logo"
+            android:src="@drawable/university" />
+
+        <ImageView
+            style="@style/LogoStyle"
+            android:layout_width="78dp"
+            android:layout_margin="16dp"
             android:contentDescription="@string/logo_l3i"
             android:src="@drawable/l3i" />
 
-        <ImageView
-            style="@style/ArrowsStyle"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:contentDescription="@string/logo_university"
-            android:src="@drawable/university" />
-
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

@@ -32,18 +32,8 @@
         <item name="colorControlNormal">@color/colorPrimaryDark</item>
     </style>
 
-    <!-- Flags appearance style for the home -->
-    <style name="FlagsStyle">
-        <item name="android:layout_width">78dp</item>
-        <item name="android:layout_height">48dp</item>
-        <item name="android:scaleType">centerCrop</item>
-        <item name="android:background" tools:targetApi="21">
-            ?android:attr/selectableItemBackgroundBorderless
-        </item>
-    </style>
-
     <!-- Arrows appearance style for signs -->
-    <style name="ArrowsStyle">
+    <style name="LogoStyle">
         <item name="android:layout_width">48dp</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:scaleType">centerCrop</item>

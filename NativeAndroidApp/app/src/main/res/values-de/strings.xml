@@ -15,8 +15,9 @@
     <string name="credits">Quellenangabe</string>
     <string name="author">Die Ressourcen gehören das Museum von La Rochelle.\nDiese Anwendung wurde im Rahmen eines Praktikums L3i Universität La Rochelle von Christian Marquay erstellt.</string>
     <string name="logo_museum">Museum logo</string>
+    <string name="city_logo">Stadt-logo</string>
     <string name="logo_l3i">L3i logo</string>
-    <string name="logo_university">Universität logo</string>
+    <string name="university_logo">Universität logo</string>
 
     //menu
     <string name="menu">Menü</string>

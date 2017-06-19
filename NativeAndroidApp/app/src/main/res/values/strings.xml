@@ -13,9 +13,10 @@
     //credits
     <string name="credits">Credits</string>
     <string name="author">The resources belong to the Museum of La Rochelle.\nThis application was created as part of an internship at l3i of the University of La Rochelle by Christian Marquay.</string>
-    <string name="logo_museum">logo museum</string>
-    <string name="logo_l3i">logo l3i</string>
-    <string name="logo_university">university logo</string>
+    <string name="logo_museum">Logo museum</string>
+    <string name="city_logo">City logo</string>
+    <string name="logo_l3i">Logo l3i</string>
+    <string name="university_logo">University logo</string>
 
     //menu
     <string name="menu">Menu</string>
