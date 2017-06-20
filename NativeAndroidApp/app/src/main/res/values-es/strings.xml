@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //main
+    <string name="app_name">Museum</string>
+    <string name="help">Ayuda</string>
+    <string name="help_first_part">En la página del menú :</string>
+    <string name="help_language">Haga clic en una bandera para seleccionar su idioma.</string>
+    <string name="help_signNumber">Introduzca el  de la placa que desea descubrir.</string>
+    <string name="help_second_part">En la página de las placas :</string>
+    <string name="help_arrows">La flecha superior izquierda le lleva de vuelta al menú.</string>
+    <string name="help_menu">El menú de arriba a la derecha para acceder a esta ayuda o al plano del museo.</string>
+    <string name="help_label">Entiendo</string>
+
+    //credits
+    <string name="credits">Créditos</string>
+    <string name="author">Los recursos pertenecen al Museum de La Rochelle.\nEsta aplicación fue creada como parte de una pasantía en el L3I de la Universidad de La Rochelle por Christian Marquay.</string>
+    <string name="logo_museum">logo museo</string>
+    <string name="city_logo">logotipo de la ciudad</string>
+    <string name="logo_l3i">logo L3I</string>
+    <string name="university_logo">logotipo de la universidad</string>
+
+    //menu
+    <string name="menu">Menú</string>
+    <string name="french_flag">Bandera francesa</string>
+    <string name="british_flag">Bandera británica</string>
+    <string name="spanish_flag">Bandera española</string>
+    <string name="german_flag">Bandera alemana</string>
+    <string name="sign">Placa</string>
+    <string name="ok">Listo</string>
+    <string name="error">Gracias a elegir un número de placa de la 1 a la 26</string>
+
+    //signs
+    <string name="logo_sign">logo placa</string>
+    <string name="audio">botón de audio</string>
+    <string name="left_arrow">flecha hacia la izquierda</string>
+    <string name="right_arrow">flecha hacia la derecha</string>
+    <string name="first_sign">Esta es la primera placa</string>
+    <string name="last_sign">Esta es la última placa</string>
+
+    //map
+    <string name="map">Mapa</string>
+    <string name="third_floor">Tercer piso</string>
+    <string name="second_floor">Segundo piso</string>
+    <string name="first_floor">Primer piso</string>
+    <string name="ground_floor">Planta baja</string>
+    <string name="basement">Sótano</string>
+</resources>

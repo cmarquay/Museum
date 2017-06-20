@@ -1,0 +1,47 @@
+<resources>
+    //main
+    <string name="app_name">Museum</string>
+    <string name="help">Help</string>
+    <string name="help_first_part">On the menu page :</string>
+    <string name="help_language">Click on a flag to choose your language.</string>
+    <string name="help_signNumber">Enter the number of the sign you want to discover.</string>
+    <string name="help_second_part">On the signs page:</string>
+    <string name="help_arrows">The arrow at the top left allows you to return to the menu.</string>
+    <string name="help_menu">The menu at the top right allows access to this help or the plan of the museum.</string>
+    <string name="help_label">I understand</string>
+
+    //credits
+    <string name="credits">Credits</string>
+    <string name="author">The resources belong to the Museum of La Rochelle.\nThis application was created as part of an internship at l3i of the University of La Rochelle by Christian Marquay.</string>
+    <string name="logo_museum">Logo museum</string>
+    <string name="city_logo">City logo</string>
+    <string name="logo_l3i">Logo l3i</string>
+    <string name="university_logo">University logo</string>
+
+    //menu
+    <string name="menu">Menu</string>
+    <string name="french_flag">French flag</string>
+    <string name="british_flag">British flag</string>
+    <string name="spanish_flag">Spanish flag</string>
+    <string name="german_flag">German flag</string>
+    <string name="number" translatable="false">N°</string>
+    <string name="sign">Sign</string>
+    <string name="ok">Done</string>
+    <string name="error">Please choose a sign number between 1 and 26</string>
+
+    //signs
+    <string name="logo_sign">logo sign</string>
+    <string name="audio">Audio button</string>
+    <string name="left_arrow">left arrow</string>
+    <string name="right_arrow">right arrow</string>
+    <string name="first_sign">This is the first sign</string>
+    <string name="last_sign">This is the last sign</string>
+
+    //map
+    <string name="map">Map</string>
+    <string name="third_floor">Third floor</string>
+    <string name="second_floor">Second floor</string>
+    <string name="first_floor">First floor</string>
+    <string name="ground_floor">Ground floor</string>
+    <string name="basement">Basement</string>
+</resources>

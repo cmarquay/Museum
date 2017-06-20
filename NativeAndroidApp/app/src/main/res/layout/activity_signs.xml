@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".SignsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="128dp">
+
+            <LinearLayout
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/sign_logo"
+                    android:layout_width="96dp"
+                    android:layout_height="128dp"
+                    android:contentDescription="@string/logo_sign" />
+
+                <ImageView
+                    android:id="@+id/second_logo"
+                    android:layout_width="96dp"
+                    android:layout_height="128dp"
+                    android:contentDescription="@string/logo_sign" />
+
+                <ImageView
+                    android:id="@+id/play_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:layout_marginTop="36dp"
+                    style="@style/Clickable"
+                    android:contentDescription="@string/audio" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/sign_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="bottom"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/sign_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sign_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/previousSign"
+                style="@style/LogoStyle"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/sign_number"
+                android:contentDescription="@string/left_arrow"
+                android:src="@drawable/left_arrow" />
+
+            <ImageView
+                android:id="@+id/nextSign"
+                style="@style/LogoStyle"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="@string/right_arrow"
+                android:src="@drawable/right_arrow" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
