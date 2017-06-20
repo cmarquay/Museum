@@ -1,7 +1,3 @@
-/* Activity class displaying the signs of the Museum app.
- * @author Christian Marquay
- */
-
 package com.example.android.museum;
 
 import android.content.Intent;
@@ -17,6 +13,11 @@ import com.example.android.museum.data.SignContent;
 
 import java.util.ArrayList;
 
+/**
+ * Activity class displaying the signs of the Museum app.
+ *
+ * @author Christian Marquay
+ */
 public class SignsActivity extends AppCompatActivity {
 
     private String language;
@@ -107,7 +108,8 @@ public class SignsActivity extends AppCompatActivity {
         displaySign();
     }
 
-    /* Method for refreshing the page with new data.
+    /**
+     * Method for refreshing the page with new data.
      */
     private void refresh() {
         Intent intent = getIntent();
@@ -119,7 +121,8 @@ public class SignsActivity extends AppCompatActivity {
         }
     }
 
-    /* Method for displaying the sign.
+    /**
+     * Method for displaying the sign.
      */
     private void displaySign() {
         ImageView signLogoView = (ImageView) findViewById(R.id.sign_logo);

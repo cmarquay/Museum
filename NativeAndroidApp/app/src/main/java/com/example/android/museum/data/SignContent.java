@@ -5,10 +5,18 @@ import com.example.android.museum.Sign;
 
 import java.util.ArrayList;
 
+/**
+ * Class containing the data of the signs.
+ *
+ * @author Christian Marquay
+ */
 public class SignContent {
 
     private ArrayList<Sign> signs = new ArrayList<>();
 
+    /**
+     * Constructor without parameters.
+     */
     public SignContent() {
         signs.add(new Sign(R.drawable.sign_24,
                 "Instruments Classifications\n" +
@@ -75,6 +83,7 @@ public class SignContent {
                         "des marais salés, desséchés ou mouillés et abrite\n" +
                         "une exceptionnelle diversité d’organismes vivants."));
         signs.add(new Sign(R.drawable.sign_3,
+                R.raw.sign_3,
                 "Birds, the Master of Marshlands\n" +
                         "\n" +
                         "An image of biodiversity",
@@ -489,6 +498,11 @@ public class SignContent {
                         "Bien que spécialiste, le chaman reste intégré dans la société et ne jouit pas d'un statut particulier."));
     }
 
+    /**
+     * Method returning the contents of the signs.
+     *
+     * @return the ArrayList of signs
+     */
     public ArrayList<Sign> getSigns() {
         return this.signs;
     }

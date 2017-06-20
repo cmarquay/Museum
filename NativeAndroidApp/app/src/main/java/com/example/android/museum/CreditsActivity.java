@@ -1,7 +1,3 @@
-/* Activity class displaying the credits of the Museum app.
- * @author Christian Marquay
- */
-
 package com.example.android.museum;
 
 import android.content.Intent;
@@ -10,6 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ * Activity class displaying the credits of the Museum app.
+ *
+ * @author Christian Marquay
+ */
 public class CreditsActivity extends AppCompatActivity {
 
     @Override

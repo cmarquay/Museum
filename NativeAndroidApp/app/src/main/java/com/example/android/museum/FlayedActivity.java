@@ -8,6 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+/**
+ * Activity class displaying the flayed of the building in the Museum app.
+ *
+ * @author Christian Marquay
+ */
 public class FlayedActivity extends AppCompatActivity {
 
     @Override
@@ -70,6 +75,11 @@ public class FlayedActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Method that displays the map of the selected floor.
+     *
+     * @param floor the number of the floor
+     */
     public void displayFloor(int floor) {
         Intent intent = new Intent(FlayedActivity.this, MapActivity.class);
         intent.putExtra("floor", floor);

@@ -7,6 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+/**
+ * Activity class displaying the map of a floor in the Museum app.
+ *
+ * @author Christian Marquay
+ */
 public class MapActivity extends AppCompatActivity {
 
     @Override

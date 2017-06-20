@@ -1,7 +1,3 @@
-/* Activity class displaying the menu of the Museum app.
- * @author Christian Marquay
- */
-
 package com.example.android.museum;
 
 import android.content.Intent;
@@ -15,6 +11,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+/**
+ * Activity class displaying the menu of the Museum app.
+ *
+ * @author Christian Marquay
+ */
 public class MenuActivity extends AppCompatActivity {
 
     String language;
