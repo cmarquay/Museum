@@ -31,7 +31,7 @@
 
     //signs
     <string name="logo_sign">logo panneau</string>
-    <string name="play">Bouton lecture</string>
+    <string name="audio">Bouton audio</string>
     <string name="left_arrow">flèche gauche</string>
     <string name="right_arrow">flèche droite</string>
     <string name="first_sign">C\'est le premier panneau</string>

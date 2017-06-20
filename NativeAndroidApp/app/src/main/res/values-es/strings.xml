@@ -31,7 +31,7 @@
 
     //signs
     <string name="logo_sign">logo placa</string>
-    <string name="play">botón de reproducción</string>
+    <string name="audio">botón de audio</string>
     <string name="left_arrow">flecha hacia la izquierda</string>
     <string name="right_arrow">flecha hacia la derecha</string>
     <string name="first_sign">Esta es la primera placa</string>
