@@ -35,6 +35,15 @@
                     android:layout_height="128dp"
                     android:contentDescription="@string/logo_sign" />
 
+                <ImageView
+                    android:id="@+id/play_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginRight="36dp"
+                    android:layout_marginTop="36dp"
+                    android:contentDescription="@string/play" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -46,14 +55,14 @@
                 android:layout_marginStart="16dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/sign_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="128dp"
-                    android:layout_marginBottom="16dp"
-                    android:gravity="bottom"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/sign_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="bottom"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/sign_content"

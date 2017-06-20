@@ -31,6 +31,7 @@
 
     //signs
     <string name="logo_sign">logo sign</string>
+    <string name="play">Play button</string>
     <string name="left_arrow">left arrow</string>
     <string name="right_arrow">right arrow</string>
     <string name="first_sign">This is the first sign</string>

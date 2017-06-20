@@ -125,6 +125,7 @@ public class SignsActivity extends AppCompatActivity {
      * Method for displaying the sign.
      */
     private void displaySign() {
+
         ImageView signLogoView = (ImageView) findViewById(R.id.sign_logo);
         if (signLogoView != null) {
             signLogoView.setImageResource(signs.get(signNumber).getLogo());
@@ -136,6 +137,17 @@ public class SignsActivity extends AppCompatActivity {
                 secondLogoView.setVisibility(View.GONE);
             }
         }
+
+        ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+        if (playButtonView != null) {
+            if (signNumber == 3 && language.equals("french")) {
+                playButtonView.setImageResource(R.drawable.right_arrow);
+                playButtonView.setVisibility(View.VISIBLE);
+            } else {
+                playButtonView.setVisibility(View.GONE);
+            }
+        }
+
         String title;
         String content;
         switch (language) {
@@ -155,14 +167,17 @@ public class SignsActivity extends AppCompatActivity {
                 title = signs.get(signNumber).getEnglishTitle();
                 content = signs.get(signNumber).getEnglishContent();
         }
+
         TextView signTitleView = (TextView) findViewById(R.id.sign_title);
         if (signTitleView != null) {
             signTitleView.setText(title);
         }
+
         TextView signContentView = (TextView) findViewById(R.id.sign_content);
         if (signContentView != null) {
             signContentView.setText(content);
         }
+
         TextView signNumberView = (TextView) findViewById(R.id.sign_number);
         if (signNumberView != null) {
             String number;
@@ -173,6 +188,7 @@ public class SignsActivity extends AppCompatActivity {
             }
             signNumberView.setText(number);
         }
+
         ImageView previousSignView = (ImageView) findViewById(R.id.previousSign);
         if (previousSignView != null) {
             if (signNumber == 1) {
@@ -181,6 +197,7 @@ public class SignsActivity extends AppCompatActivity {
                 previousSignView.setVisibility(View.VISIBLE);
             }
         }
+
         ImageView nextSignView = (ImageView) findViewById(R.id.nextSign);
         if (nextSignView != null) {
             if (signNumber == 26) {
