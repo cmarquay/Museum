@@ -1,6 +1,8 @@
 package com.example.android.museum;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -22,14 +24,38 @@ public class SignsActivity extends AppCompatActivity {
 
     private String language;
     private int signNumber;
-
-
     private ArrayList<Sign> signs;
+    private MediaPlayer mMediaPlayer;
+    private AudioManager mAudioManager;
+    private int length;
+    private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
+        public void onAudioFocusChange(int focusChange) {
+            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+                mMediaPlayer.pause();
+                mMediaPlayer.seekTo(0);
+            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                mMediaPlayer.start();
+            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+                releaseMediaPlayer();
+            }
+        }
+    };
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            if (playButtonView != null) {
+                playButtonView.setImageResource(R.drawable.play_circle);
+            }
+            releaseMediaPlayer();
+        }
+    };
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putString("language", language);
         savedInstanceState.putInt("signNumber", signNumber);
+        savedInstanceState.putInt("length", length);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -45,6 +71,7 @@ public class SignsActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             language = savedInstanceState.getString("language");
             signNumber = savedInstanceState.getInt("signNumber");
+            length = savedInstanceState.getInt("length");
         } else {
             Intent intent = getIntent();
             if (intent != null) {
@@ -56,8 +83,33 @@ public class SignsActivity extends AppCompatActivity {
             }
         }
 
+        mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+
         SignContent sc = new SignContent();
         this.signs = sc.getSigns();
+
+        final ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+        if (playButtonView != null) {
+            playButtonView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                    if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                        if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+                            releaseMediaPlayer();
+                        } else {
+                            mMediaPlayer = MediaPlayer.create(SignsActivity.this, signs.get(signNumber).getAudio());
+                            if (length > 0) {
+                                mMediaPlayer.seekTo(length);
+                            }
+                            mMediaPlayer.start();
+                            playButtonView.setImageResource(R.drawable.pause_circle);
+                            mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                        }
+                    }
+                }
+            });
+        }
 
         ImageView previousSignView = (ImageView) findViewById(R.id.previousSign);
         if (previousSignView != null) {
@@ -140,8 +192,8 @@ public class SignsActivity extends AppCompatActivity {
 
         ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
         if (playButtonView != null) {
-            if (signNumber == 3 && language.equals("french")) {
-                playButtonView.setImageResource(R.drawable.right_arrow);
+            if (signs.get(signNumber).hasAudio() && language.equals("french")) {
+                playButtonView.setImageResource(R.drawable.play_circle);
                 playButtonView.setVisibility(View.VISIBLE);
             } else {
                 playButtonView.setVisibility(View.GONE);
@@ -205,6 +257,42 @@ public class SignsActivity extends AppCompatActivity {
             } else {
                 nextSignView.setVisibility(View.VISIBLE);
             }
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        releaseMediaPlayer();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
+    /**
+     * Clean up the media player by releasing its resources.
+     */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            length = mMediaPlayer.getCurrentPosition();
+            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            if (playButtonView != null) {
+                playButtonView.setImageResource(R.drawable.play_circle);
+            }
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mMediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mMediaPlayer = null;
+
+            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
 
