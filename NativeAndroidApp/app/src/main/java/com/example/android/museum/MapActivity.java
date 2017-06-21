@@ -34,7 +34,7 @@ public class MapActivity extends AppCompatActivity {
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
-            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
             if (playButtonView != null) {
                 playButtonView.setImageResource(R.drawable.play_circle);
             }
@@ -66,7 +66,7 @@ public class MapActivity extends AppCompatActivity {
             int floor = intent.getIntExtra("floor", 0);
 
             ImageView mapView = (ImageView) findViewById(R.id.map);
-            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
             if (mapView != null) {
                 switch (floor) {
                     case -1:
@@ -102,7 +102,7 @@ public class MapActivity extends AppCompatActivity {
 
         mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
 
-        final ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+        final ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
         if (playButtonView != null) {
             playButtonView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -145,7 +145,7 @@ public class MapActivity extends AppCompatActivity {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {
             length = mMediaPlayer.getCurrentPosition();
-            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
             if (playButtonView != null) {
                 playButtonView.setImageResource(R.drawable.play_circle);
             }

@@ -43,7 +43,7 @@ public class SignsActivity extends AppCompatActivity {
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
-            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
             if (playButtonView != null) {
                 playButtonView.setImageResource(R.drawable.play_circle);
             }
@@ -88,7 +88,7 @@ public class SignsActivity extends AppCompatActivity {
         SignContent sc = new SignContent();
         this.signs = sc.getSigns();
 
-        final ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+        final ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
         if (playButtonView != null) {
             playButtonView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -190,7 +190,7 @@ public class SignsActivity extends AppCompatActivity {
             }
         }
 
-        ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+        ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
         if (playButtonView != null) {
             if (signs.get(signNumber).hasAudio() && language.equals("french")) {
                 playButtonView.setImageResource(R.drawable.play_circle);
@@ -279,7 +279,7 @@ public class SignsActivity extends AppCompatActivity {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {
             length = mMediaPlayer.getCurrentPosition();
-            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
             if (playButtonView != null) {
                 playButtonView.setImageResource(R.drawable.play_circle);
             }
