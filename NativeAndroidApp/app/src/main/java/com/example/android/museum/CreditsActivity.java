@@ -13,6 +13,22 @@ import android.view.MenuItem;
  */
 public class CreditsActivity extends AppCompatActivity {
 
+    private Cookie cookie;
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putSerializable("cookie", cookie);
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onBackPressed() {
+        cookie.set("BACK_BUTTON", System.currentTimeMillis());
+        Intent intent = new Intent(this, MenuActivity.class);
+        intent.putExtra("cookie", cookie);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +37,15 @@ public class CreditsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        if (savedInstanceState != null) {
+            cookie = (Cookie) savedInstanceState.getSerializable("cookie");
+        } else {
+            Intent intent = getIntent();
+            if (intent != null) {
+                cookie = (Cookie) intent.getSerializableExtra("cookie");
+            }
+        }
     }
 
     @Override
@@ -34,11 +59,15 @@ public class CreditsActivity extends AppCompatActivity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.action_help:
+                cookie.set("HELP", System.currentTimeMillis());
                 intent = new Intent(this, MainActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_map:
+                cookie.set("FLAYED", System.currentTimeMillis());
                 intent = new Intent(this, FlayedActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
         }

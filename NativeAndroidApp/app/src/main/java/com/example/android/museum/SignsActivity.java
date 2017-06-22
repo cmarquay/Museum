@@ -22,6 +22,7 @@ import java.util.ArrayList;
  */
 public class SignsActivity extends AppCompatActivity {
 
+    private Cookie cookie;
     private String language;
     private int signNumber;
     private ArrayList<Sign> signs;
@@ -53,10 +54,19 @@ public class SignsActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putSerializable("cookie", cookie);
         savedInstanceState.putString("language", language);
         savedInstanceState.putInt("signNumber", signNumber);
         savedInstanceState.putInt("length", length);
         super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onBackPressed() {
+        cookie.set("BACK_BUTTON", System.currentTimeMillis());
+        Intent intent = new Intent(this, MenuActivity.class);
+        intent.putExtra("cookie", cookie);
+        startActivity(intent);
     }
 
     @Override
@@ -69,12 +79,14 @@ public class SignsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         if (savedInstanceState != null) {
+            cookie = (Cookie) savedInstanceState.getSerializable("cookie");
             language = savedInstanceState.getString("language");
             signNumber = savedInstanceState.getInt("signNumber");
             length = savedInstanceState.getInt("length");
         } else {
             Intent intent = getIntent();
             if (intent != null) {
+                cookie = (Cookie) intent.getSerializableExtra("cookie");
                 language = intent.getStringExtra("language");
                 signNumber = intent.getIntExtra("signNumber", 1);
             } else {
@@ -129,7 +141,7 @@ public class SignsActivity extends AppCompatActivity {
                         default:
                             signNumber--;
                     }
-                    refresh();
+                    refresh("PREVIOUS");
                 }
             });
         }
@@ -152,7 +164,7 @@ public class SignsActivity extends AppCompatActivity {
                         default:
                             signNumber++;
                     }
-                    refresh();
+                    refresh("NEXT");
                 }
             });
         }
@@ -163,9 +175,11 @@ public class SignsActivity extends AppCompatActivity {
     /**
      * Method for refreshing the page with new data.
      */
-    private void refresh() {
+    private void refresh(String type) {
         Intent intent = getIntent();
         if (intent != null) {
+            cookie.set(type, System.currentTimeMillis());
+            intent.putExtra("cookie", cookie);
             intent.putExtra("language", language);
             intent.putExtra("signNumber", signNumber);
             finish();
@@ -307,15 +321,21 @@ public class SignsActivity extends AppCompatActivity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.action_help:
+                cookie.set("HELP", System.currentTimeMillis());
                 intent = new Intent(this, MainActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_map:
+                cookie.set("FLAYED", System.currentTimeMillis());
                 intent = new Intent(this, FlayedActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_credits:
+                cookie.set("CREDITS", System.currentTimeMillis());
                 intent = new Intent(this, CreditsActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
         }

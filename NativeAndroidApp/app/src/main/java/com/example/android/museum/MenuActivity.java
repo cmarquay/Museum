@@ -18,7 +18,23 @@ import android.widget.Toast;
  */
 public class MenuActivity extends AppCompatActivity {
 
-    String language;
+    private Cookie cookie;
+    private String language;
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putSerializable("cookie", cookie);
+        savedInstanceState.putString("language", language);
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onBackPressed() {
+        cookie.set("BACK_BUTTON", System.currentTimeMillis());
+        Intent intent = new Intent(this, MenuActivity.class);
+        intent.putExtra("cookie", cookie);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +45,16 @@ public class MenuActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        language = "english";
+        if (savedInstanceState != null) {
+            cookie = (Cookie) savedInstanceState.getSerializable("cookie");
+            language = savedInstanceState.getString("language");
+        } else {
+            Intent intent = getIntent();
+            if (intent != null) {
+                cookie = (Cookie) intent.getSerializableExtra("cookie");
+                language = "english";
+            }
+        }
 
         ImageView englishLanguageView = (ImageView) findViewById(R.id.englishLanguage);
         if (englishLanguageView != null) {
@@ -83,7 +108,9 @@ public class MenuActivity extends AppCompatActivity {
                         if (number < 1 || number > 26) {
                             Toast.makeText(MenuActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
                         } else {
+                            cookie.set("SIGN", System.currentTimeMillis(), language, number);
                             Intent intent = new Intent(MenuActivity.this, SignsActivity.class);
+                            intent.putExtra("cookie", cookie);
                             intent.putExtra("language", language);
                             intent.putExtra("signNumber", number);
                             startActivity(intent);
@@ -107,15 +134,21 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.action_help:
+                cookie.set("HELP", System.currentTimeMillis());
                 intent = new Intent(this, MainActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_map:
+                cookie.set("FLAYED", System.currentTimeMillis());
                 intent = new Intent(this, FlayedActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_credits:
+                cookie.set("CREDITS", System.currentTimeMillis());
                 intent = new Intent(this, CreditsActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
         }
