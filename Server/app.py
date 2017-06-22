@@ -16,10 +16,12 @@ CORS(app)
 
 @app.route("/trace", methods=['POST'])
 def trace():
-	data = request.form["data"]
+	# data = request.form["data"]
+	print(request)
+	data = request.get_json(force=True)
 
 	print(data)
-	return data
+	return jsonify(data)
 
 
 if __name__ == "__main__":
