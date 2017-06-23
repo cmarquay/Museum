@@ -30,10 +30,6 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        cookie.set("BACK_BUTTON", System.currentTimeMillis());
-        Intent intent = new Intent(this, MenuActivity.class);
-        intent.putExtra("cookie", cookie);
-        startActivity(intent);
     }
 
     @Override

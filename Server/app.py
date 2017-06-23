@@ -28,4 +28,4 @@ if __name__ == "__main__":
 	# dev server
 	# app.run()
 	# Docker
-	app.run(host='127.0.0.1', port=8085)
+	app.run(host='192.168.42.104', port=8085)

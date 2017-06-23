@@ -1,6 +1,9 @@
 package com.example.android.museum;
 
+import com.example.android.museum.data.NetworkUtils;
+
 import java.io.Serializable;
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -69,6 +72,7 @@ public class Cookie implements Serializable {
      * Method that sends the data to the server.
      */
     private void send() {
+        URL serverUrl = NetworkUtils.buildUrl();
         mData.clear();
     }
 }
