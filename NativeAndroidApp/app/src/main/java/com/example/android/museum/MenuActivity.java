@@ -30,6 +30,7 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        //Already on the menu
     }
 
     @Override
@@ -104,7 +105,7 @@ public class MenuActivity extends AppCompatActivity {
                         if (number < 1 || number > 26) {
                             Toast.makeText(MenuActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
                         } else {
-                            cookie.set("SIGN", System.currentTimeMillis(), language, number);
+                            cookie.set(MenuActivity.this, "SIGN", System.currentTimeMillis(), language, number);
                             Intent intent = new Intent(MenuActivity.this, SignsActivity.class);
                             intent.putExtra("cookie", cookie);
                             intent.putExtra("language", language);
@@ -130,19 +131,19 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.action_help:
-                cookie.set("HELP", System.currentTimeMillis());
+                cookie.set(this, "HELP", System.currentTimeMillis());
                 intent = new Intent(this, MainActivity.class);
                 intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_map:
-                cookie.set("FLAYED", System.currentTimeMillis());
+                cookie.set(this, "FLAYED", System.currentTimeMillis());
                 intent = new Intent(this, FlayedActivity.class);
                 intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_credits:
-                cookie.set("CREDITS", System.currentTimeMillis());
+                cookie.set(this, "CREDITS", System.currentTimeMillis());
                 intent = new Intent(this, CreditsActivity.class);
                 intent.putExtra("cookie", cookie);
                 startActivity(intent);

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        cookie.set("BACK_BUTTON", System.currentTimeMillis());
+        cookie.set(this, "BACK_BUTTON", System.currentTimeMillis());
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra("cookie", cookie);
         startActivity(intent);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             menuView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    cookie.set("MENU", System.currentTimeMillis());
+                    cookie.set(MainActivity.this, "MENU", System.currentTimeMillis());
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     intent.putExtra("cookie", cookie);
                     startActivity(intent);

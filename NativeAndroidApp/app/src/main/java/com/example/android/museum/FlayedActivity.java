@@ -25,7 +25,7 @@ public class FlayedActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        cookie.set("BACK_BUTTON", System.currentTimeMillis());
+        cookie.set(this, "BACK_BUTTON", System.currentTimeMillis());
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra("cookie", cookie);
         startActivity(intent);
@@ -106,8 +106,8 @@ public class FlayedActivity extends AppCompatActivity {
      * @param floor the number of the floor
      */
     public void displayFloor(int floor) {
-        cookie.set("FLOOR", System.currentTimeMillis(), floor);
-        Intent intent = new Intent(FlayedActivity.this, MapActivity.class);
+        cookie.set(this, "FLOOR", System.currentTimeMillis(), floor);
+        Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("cookie", cookie);
         intent.putExtra("floor", floor);
         startActivity(intent);
@@ -124,13 +124,13 @@ public class FlayedActivity extends AppCompatActivity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.action_help:
-                cookie.set("HELP", System.currentTimeMillis());
+                cookie.set(this, "HELP", System.currentTimeMillis());
                 intent = new Intent(this, MainActivity.class);
                 intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_credits:
-                cookie.set("CREDITS", System.currentTimeMillis());
+                cookie.set(this, "CREDITS", System.currentTimeMillis());
                 intent = new Intent(this, CreditsActivity.class);
                 intent.putExtra("cookie", cookie);
                 startActivity(intent);

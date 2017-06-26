@@ -55,7 +55,7 @@ public class MapActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        cookie.set("BACK_BUTTON", System.currentTimeMillis());
+        cookie.set(this, "BACK_BUTTON", System.currentTimeMillis());
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra("cookie", cookie);
         startActivity(intent);
@@ -188,19 +188,19 @@ public class MapActivity extends AppCompatActivity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.action_help:
-                cookie.set("HELP", System.currentTimeMillis());
+                cookie.set(this, "HELP", System.currentTimeMillis());
                 intent = new Intent(this, MainActivity.class);
                 intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_map:
-                cookie.set("FLAYED", System.currentTimeMillis());
+                cookie.set(this, "FLAYED", System.currentTimeMillis());
                 intent = new Intent(this, FlayedActivity.class);
                 intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_credits:
-                cookie.set("CREDITS", System.currentTimeMillis());
+                cookie.set(this, "CREDITS", System.currentTimeMillis());
                 intent = new Intent(this, CreditsActivity.class);
                 intent.putExtra("cookie", cookie);
                 startActivity(intent);

@@ -109,4 +109,13 @@ public class PreparedData implements Serializable {
     public int getSignNumber() {
         return mSignNumber;
     }
+
+    /**
+     * Method that returns the number of the floor.
+     *
+     * @return the number of the floor
+     */
+    public int getFloor() {
+        return mFloor;
+    }
 }

@@ -1,10 +1,17 @@
 package com.example.android.museum;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+
 import com.example.android.museum.data.NetworkUtils;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Class containing the data to be sent to the server.
@@ -29,50 +36,82 @@ public class Cookie implements Serializable {
     /**
      * Method storing the data to be sent to the server.
      *
-     * @param type the type of action
-     * @param ts   the moment of action
+     * @param context the original activity
+     * @param type    the type of action
+     * @param ts      the moment of action
      */
-    public void set(String type, Long ts) {
+    public void set(Context context, String type, Long ts) {
         mData.add(new PreparedData(type, ts));
-        if (mData.size() == 10) {
-            send();
+        if (mData.size() >= 10) {
+            send(context);
         }
     }
 
     /**
      * Method storing the data to be sent to the server.
      *
+     * @param context    the original activity
      * @param type       the type of action
      * @param ts         the moment of action
      * @param language   the language selected to display the sign
      * @param signNumber the number of the sign
      */
-    public void set(String type, Long ts, String language, int signNumber) {
+    public void set(Context context, String type, Long ts, String language, int signNumber) {
         mData.add(new PreparedData(type, ts, language, signNumber));
-        if (mData.size() == 10) {
-            send();
+        if (mData.size() >= 10) {
+            send(context);
         }
     }
 
     /**
      * Method storing the data to be sent to the server.
      *
-     * @param type  the type of action
-     * @param ts    the moment of action
-     * @param floor the number of the selected floor
+     * @param context the original activity
+     * @param type    the type of action
+     * @param ts      the moment of action
+     * @param floor   the number of the selected floor
      */
-    public void set(String type, Long ts, int floor) {
+    public void set(Context context, String type, Long ts, int floor) {
         mData.add(new PreparedData(type, ts, floor));
-        if (mData.size() == 10) {
-            send();
+        if (mData.size() >= 10) {
+            send(context);
         }
     }
 
     /**
      * Method that sends the data to the server.
+     *
+     * @param context the original activity
      */
-    private void send() {
-        URL serverUrl = NetworkUtils.buildUrl();
-        mData.clear();
+    private void send(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isAvailable() && networkInfo.isConnected()) {
+            URL serverUrl = NetworkUtils.buildUrl();
+            try {
+                if (new MuseumTask().execute(serverUrl).get()) {
+                    mData.subList(0, 10).clear();
+                }
+            } catch (ExecutionException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Class allowing to make long spots in a thread parallel to the UI thread.
+     */
+    public class MuseumTask extends AsyncTask<URL, Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(URL... urls) {
+            URL searchUrl = urls[0];
+            Boolean sent = false;
+            try {
+                sent = NetworkUtils.sendToHttpUrl(searchUrl, mData, mId);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return sent;
+        }
     }
 }
