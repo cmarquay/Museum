@@ -16,9 +16,12 @@ import android.widget.ImageView;
  * @author Christian Marquay
  */
 public class MapActivity extends AppCompatActivity {
+
+    private Cookie cookie;
+    private int floor;
+    private int length;
     private MediaPlayer mMediaPlayer;
     private AudioManager mAudioManager;
-    private int length;
     private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         public void onAudioFocusChange(int focusChange) {
             if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
@@ -34,7 +37,7 @@ public class MapActivity extends AppCompatActivity {
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
-            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
             if (playButtonView != null) {
                 playButtonView.setImageResource(R.drawable.play_circle);
             }
@@ -44,8 +47,18 @@ public class MapActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putSerializable("cookie", cookie);
+        savedInstanceState.putInt("floor", floor);
         savedInstanceState.putInt("length", length);
         super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onBackPressed() {
+        cookie.set(this, "BACK_BUTTON", System.currentTimeMillis());
+        Intent intent = new Intent(this, MenuActivity.class);
+        intent.putExtra("cookie", cookie);
+        startActivity(intent);
     }
 
     @Override
@@ -58,51 +71,53 @@ public class MapActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         if (savedInstanceState != null) {
+            cookie = (Cookie) savedInstanceState.getSerializable("cookie");
+            floor = savedInstanceState.getInt("floor");
             length = savedInstanceState.getInt("length");
+        } else {
+            Intent intent = getIntent();
+            if (intent != null) {
+                cookie = (Cookie) intent.getSerializableExtra("cookie");
+                floor = intent.getIntExtra("floor", 0);
+            }
         }
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            int floor = intent.getIntExtra("floor", 0);
-
-            ImageView mapView = (ImageView) findViewById(R.id.map);
-            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
-            if (mapView != null) {
-                switch (floor) {
-                    case -1:
-                        mapView.setImageResource(R.drawable.basement);
-                        mapView.setContentDescription(getString(R.string.basement));
-                        playButtonView.setVisibility(View.GONE);
-                        break;
-                    case 1:
-                        mapView.setImageResource(R.drawable.first_floor);
-                        mapView.setContentDescription(getString(R.string.first_floor));
-                        playButtonView.setVisibility(View.GONE);
-                        break;
-                    case 2:
-                        mapView.setImageResource(R.drawable.second_floor);
-                        mapView.setContentDescription(getString(R.string.second_floor));
-                        playButtonView.setVisibility(View.GONE);
-                        break;
-                    case 3:
-                        mapView.setImageResource(R.drawable.third_floor);
-                        mapView.setContentDescription(getString(R.string.third_floor));
-                        playButtonView.setVisibility(View.GONE);
-                        break;
-                    default:
-                        mapView.setImageResource(R.drawable.ground_floor);
-                        mapView.setContentDescription(getString(R.string.ground_floor));
-                        playButtonView.setImageResource(R.drawable.play_circle);
-                        playButtonView.setContentDescription(getString(R.string.audio));
-                        playButtonView.setVisibility(View.VISIBLE);
-                        break;
-                }
+        ImageView mapView = (ImageView) findViewById(R.id.map);
+        final ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
+        if (mapView != null) {
+            switch (floor) {
+                case -1:
+                    mapView.setImageResource(R.drawable.basement);
+                    mapView.setContentDescription(getString(R.string.basement));
+                    playButtonView.setVisibility(View.GONE);
+                    break;
+                case 1:
+                    mapView.setImageResource(R.drawable.first_floor);
+                    mapView.setContentDescription(getString(R.string.first_floor));
+                    playButtonView.setVisibility(View.GONE);
+                    break;
+                case 2:
+                    mapView.setImageResource(R.drawable.second_floor);
+                    mapView.setContentDescription(getString(R.string.second_floor));
+                    playButtonView.setVisibility(View.GONE);
+                    break;
+                case 3:
+                    mapView.setImageResource(R.drawable.third_floor);
+                    mapView.setContentDescription(getString(R.string.third_floor));
+                    playButtonView.setVisibility(View.GONE);
+                    break;
+                default:
+                    mapView.setImageResource(R.drawable.ground_floor);
+                    mapView.setContentDescription(getString(R.string.ground_floor));
+                    playButtonView.setImageResource(R.drawable.play_circle);
+                    playButtonView.setContentDescription(getString(R.string.audio));
+                    playButtonView.setVisibility(View.VISIBLE);
+                    break;
             }
         }
 
         mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
 
-        final ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
         if (playButtonView != null) {
             playButtonView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -145,7 +160,7 @@ public class MapActivity extends AppCompatActivity {
         // If the media player is not null, then it may be currently playing a sound.
         if (mMediaPlayer != null) {
             length = mMediaPlayer.getCurrentPosition();
-            ImageView playButtonView = (ImageView) findViewById(R.id.play_button);
+            ImageView playButtonView = (ImageView) findViewById(R.id.audio_button);
             if (playButtonView != null) {
                 playButtonView.setImageResource(R.drawable.play_circle);
             }
@@ -173,15 +188,21 @@ public class MapActivity extends AppCompatActivity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.action_help:
+                cookie.set(this, "HELP", System.currentTimeMillis());
                 intent = new Intent(this, MainActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_map:
+                cookie.set(this, "FLAYED", System.currentTimeMillis());
                 intent = new Intent(this, FlayedActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
             case R.id.action_credits:
+                cookie.set(this, "CREDITS", System.currentTimeMillis());
                 intent = new Intent(this, CreditsActivity.class);
+                intent.putExtra("cookie", cookie);
                 startActivity(intent);
                 return true;
         }

@@ -1,7 +1,7 @@
 Mobile Application for the Museum of La Rochelle as part of an internship of end of bachelor at l3i of the university of La Rochelle.
 
 Two versions are currently available :
-* A Native Android App in the NativeAndroidApp folder
+* A Native Android App in the NativeAndroidApp folder which sends data to a remote server (here a dumb server for simulation)
     * Platform-specific skills
     * Highest	performance
     * Full access to device capabilities
@@ -9,6 +9,17 @@ Two versions are currently available :
     * Fully hosted in the mobile browser
     * Slowest
     * No access to device capabilities
+
+
+Before starting the dumb server :
+1. Change the host and port on the line 31 in Server/app.py
+2. Change the values of SERVER_BASE_URL and PARAM_PORT on the lines 26 and 27 of the NetworkUtils class of the Native Android App
+
+To start the dumb server :
+
+
+    python Server/app.py
+
 
 |                        |      **Native**     |        **HTML5**       |
 |------------------------|---------------------|------------------------|

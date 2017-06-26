@@ -1,7 +1,3 @@
-/* Class Sign representing a sign.
- * @author Christian Marquay
- */
-
 package com.example.android.museum;
 
 /**
