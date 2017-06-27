@@ -41,6 +41,7 @@ public class MapActivity extends AppCompatActivity {
             if (playButtonView != null) {
                 playButtonView.setImageResource(R.drawable.play_circle);
             }
+            cookie.set(MapActivity.this, "COMPLETE_AUDIO", System.currentTimeMillis());
             releaseMediaPlayer();
         }
     };
@@ -125,12 +126,14 @@ public class MapActivity extends AppCompatActivity {
                     int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                     if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                         if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+                            cookie.set(MapActivity.this, "PAUSE_AUDIO", System.currentTimeMillis());
                             releaseMediaPlayer();
                         } else {
                             mMediaPlayer = MediaPlayer.create(MapActivity.this, R.raw.ground_floor);
                             if (length > 0) {
                                 mMediaPlayer.seekTo(length);
                             }
+                            cookie.set(MapActivity.this, "PLAY_AUDIO", System.currentTimeMillis());
                             mMediaPlayer.start();
                             playButtonView.setImageResource(R.drawable.pause_circle);
                             mMediaPlayer.setOnCompletionListener(mCompletionListener);
@@ -144,12 +147,14 @@ public class MapActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        cookie.set(this, "onPAUSE_AUDIO", System.currentTimeMillis());
         releaseMediaPlayer();
     }
 
     @Override
     public void onStop() {
         super.onStop();
+        cookie.set(this, "onSTOP_AUDIO", System.currentTimeMillis());
         releaseMediaPlayer();
     }
 

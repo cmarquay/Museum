@@ -23,8 +23,8 @@ import static android.net.Uri.parse;
  * @author Christian Marquay
  */
 public class NetworkUtils {
-    private final static String SERVER_BASE_URL = "http://127.0.0.1";
-    private final static String PARAM_PORT = "8085";
+    private final static String SERVER_BASE_URL = "http://wwwcache.univ-lr.fr";
+    private final static String PARAM_PORT = "3128";
     private final static String PARAM_ROUTE = "trace";
 
 
