@@ -88,9 +88,10 @@ public class Cookie implements Serializable {
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isAvailable() && networkInfo.isConnected()) {
             URL serverUrl = NetworkUtils.buildUrl();
+            int length = mData.size();
             try {
                 if (new MuseumTask().execute(serverUrl).get()) {
-                    mData.subList(0, 10).clear();
+                    mData.subList(0, length).clear();
                 }
             } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
