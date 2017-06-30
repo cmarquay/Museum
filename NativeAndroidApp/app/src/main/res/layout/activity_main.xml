@@ -90,7 +90,6 @@
                 android:paddingRight="@dimen/padding_main">
 
                 <TextView
-                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/help_arrows"
@@ -106,6 +105,37 @@
                     android:textSize="@dimen/text_size" />
 
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_vertical"
+            android:paddingTop="@dimen/padding_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height"
+                android:contentDescription="@string/audio"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pause_circle" />
+
+            <ImageView
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height"
+                android:contentDescription="@string/audio"
+                android:scaleType="centerCrop"
+                android:src="@drawable/play_circle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/help_audio"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size"
+                android:paddingLeft="@dimen/padding_main"
+                android:paddingRight="@dimen/padding_main" />
 
         </LinearLayout>
 
