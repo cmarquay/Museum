@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
+    android:padding="@dimen/padding_horizontal"
     tools:context=".FlayedActivity">
 
     <LinearLayout
@@ -14,36 +15,41 @@
 
         <ImageView
             android:id="@+id/third_floor"
-            android:layout_width="match_parent"
-            android:layout_height="96dp"
+            android:layout_width="@dimen/flayed_width"
+            android:layout_height="@dimen/flayed_third_height"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/third_floor"
             android:src="@drawable/flayed_third_floor" />
 
         <ImageView
             android:id="@+id/second_floor"
-            android:layout_width="match_parent"
-            android:layout_height="96dp"
+            android:layout_width="@dimen/flayed_width"
+            android:layout_height="@dimen/flayed_second_height"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/second_floor"
             android:src="@drawable/flayed_second_floor" />
 
         <ImageView
             android:id="@+id/first_floor"
-            android:layout_width="match_parent"
-            android:layout_height="96dp"
+            android:layout_width="@dimen/flayed_width"
+            android:layout_height="@dimen/flayed_first_height"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/first_floor"
             android:src="@drawable/flayed_first_floor" />
 
         <ImageView
             android:id="@+id/ground_floor"
-            android:layout_width="match_parent"
-            android:layout_height="96dp"
+            android:layout_width="@dimen/flayed_width"
+            android:layout_height="@dimen/flayed_ground_height"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/ground_floor"
             android:src="@drawable/flayed_ground_floor" />
 
         <ImageView
             android:id="@+id/basement"
-            android:layout_width="match_parent"
-            android:layout_height="96dp"
+            android:layout_width="@dimen/flayed_width"
+            android:layout_height="@dimen/flayed_basement_height"
+            android:layout_gravity="center_horizontal"
             android:contentDescription="@string/basement"
             android:src="@drawable/flayed_basement" />
 

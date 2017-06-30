@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:padding="16dp"
+    android:padding="@dimen/padding_horizontal"
     tools:context=".MenuActivity">
 
     <LinearLayout
@@ -15,19 +15,19 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="@dimen/padding_horizontal">
 
             <ImageView
                 android:id="@+id/frenchLanguage"
                 style="@style/LogoStyle"
-                android:layout_width="78dp"
+                android:layout_width="@dimen/flag_width"
                 android:contentDescription="@string/french_flag"
                 android:src="@drawable/france" />
 
             <ImageView
                 android:id="@+id/englishLanguage"
                 style="@style/LogoStyle"
-                android:layout_width="78dp"
+                android:layout_width="@dimen/flag_width"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:contentDescription="@string/british_flag"
@@ -39,21 +39,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="@dimen/padding_vertical"
+            android:layout_marginTop="@dimen/padding_vertical"
             android:text="@string/number"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="@dimen/text_number_size" />
 
         <EditText
             android:id="@+id/sign_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/padding_vertical"
             android:gravity="center_horizontal"
             android:hint="@string/sign"
             android:inputType="number"
             android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size"
             android:textColorHint="@android:color/black" />
 
         <Button
@@ -61,8 +63,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="32dp"
-            android:text="@string/ok" />
+            android:layout_marginTop="@dimen/padding_vertical"
+            android:text="@string/ok"
+            android:textSize="@dimen/text_size" />
 
     </LinearLayout>
 

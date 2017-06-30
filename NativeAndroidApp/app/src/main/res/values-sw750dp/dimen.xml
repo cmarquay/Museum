@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_horizontal">32dp</dimen>
+    <dimen name="padding_vertical">32dp</dimen>
+    <dimen name="padding_main">16dp</dimen>
+    <dimen name="padding_audio">48dp</dimen>
+    <dimen name="padding_audio_map_horizontal">90dp</dimen>
+    <dimen name="padding_audio_map_vertical">16dp</dimen>
+    <dimen name="padding_sign_text">16dp</dimen>
+
+    <dimen name="image_main">192dp</dimen>
+
+    <dimen name="logo_width">96dp</dimen>
+    <dimen name="logo_height">96dp</dimen>
+    <dimen name="logo_sign_width">192dp</dimen>
+    <dimen name="logo_sign_height">256dp</dimen>
+    <dimen name="flag_width">156dp</dimen>
+    <dimen name="flayed_width">640dp</dimen>
+    <dimen name="flayed_third_height">104dp</dimen>
+    <dimen name="flayed_second_height">120dp</dimen>
+    <dimen name="flayed_first_height">124dp</dimen>
+    <dimen name="flayed_ground_height">156dp</dimen>
+    <dimen name="flayed_basement_height">160dp</dimen>
+
+    <dimen name="map_width">640dp</dimen>
+    <dimen name="map_height">890dp</dimen>
+
+    <dimen name="text_size">36sp</dimen>
+    <dimen name="text_number_size">48sp</dimen>
+</resources>
