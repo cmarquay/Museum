@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:padding="16dp"
+    android:padding="@dimen/padding_horizontal"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="@dimen/padding_horizontal">
 
         <TextView
             android:layout_width="match_parent"
@@ -19,17 +19,17 @@
             android:layout_weight="1"
             android:text="@string/help_first_part"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="@dimen/text_size" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp">
+            android:paddingBottom="@dimen/padding_vertical"
+            android:paddingTop="@dimen/padding_vertical">
 
             <ImageView
-                android:layout_width="144dp"
-                android:layout_height="144dp"
+                android:layout_width="@dimen/image_main"
+                android:layout_height="@dimen/image_main"
                 android:contentDescription="@string/menu"
                 android:scaleType="centerCrop"
                 android:src="@drawable/help_menu" />
@@ -38,23 +38,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp">
+                android:paddingLeft="@dimen/padding_main"
+                android:paddingRight="@dimen/padding_main">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/help_language"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/padding_vertical"
                     android:text="@string/help_signNumber"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/text_size" />
 
             </LinearLayout>
 
@@ -63,21 +63,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/padding_vertical"
             android:layout_weight="1"
             android:text="@string/help_second_part"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="@dimen/text_size" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="32dp"
-            android:paddingTop="16dp">
+            android:paddingBottom="@dimen/padding_vertical"
+            android:paddingTop="@dimen/padding_vertical">
 
             <ImageView
-                android:layout_width="144dp"
-                android:layout_height="144dp"
+                android:layout_width="@dimen/image_main"
+                android:layout_height="@dimen/image_main"
                 android:contentDescription="@string/sign"
                 android:scaleType="centerCrop"
                 android:src="@drawable/help_signs" />
@@ -86,26 +86,56 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp">
+                android:paddingLeft="@dimen/padding_main"
+                android:paddingRight="@dimen/padding_main">
 
                 <TextView
-                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/help_arrows"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/text_size" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/padding_vertical"
                     android:text="@string/help_menu"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:textSize="@dimen/text_size" />
 
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_vertical"
+            android:paddingTop="@dimen/padding_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height"
+                android:contentDescription="@string/audio"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pause_circle" />
+
+            <ImageView
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height"
+                android:contentDescription="@string/audio"
+                android:scaleType="centerCrop"
+                android:src="@drawable/play_circle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/help_audio"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size"
+                android:paddingLeft="@dimen/padding_main"
+                android:paddingRight="@dimen/padding_main" />
 
         </LinearLayout>
 
@@ -114,7 +144,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/help_label" />
+            android:paddingTop="@dimen/padding_vertical"
+            android:text="@string/help_label"
+            android:textSize="@dimen/text_size" />
 
     </LinearLayout>
 
